@@ -136,7 +136,7 @@ h2::selection {
 
 /* project 1 */
 .card:nth-child(1) {
-  background: url(/project/project-one.png) center center/cover;
+  background: url(/project-one.png) center center/cover;
 }
 
 /* Project 2 */
