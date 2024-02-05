@@ -161,7 +161,7 @@ h2::selection {
 
 /* Project 6 */
 .card:nth-child(6) {
-  background: url(=/project-six.png) center center/cover;
+  background: url(/project-six.png) center center/cover;
 }
 
 /* Media Queries */
