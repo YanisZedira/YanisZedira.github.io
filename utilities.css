@@ -111,7 +111,11 @@ h2::selection {
   border-radius: 5px;
   transition: 0.4s ease-in-out;
   cursor: pointer;
+  position: relative;
+  overflow: hidden; /* Assure que rien ne dépasse de la carte */
 }
+
+
 
 .card a {
   color: #ffffff;
@@ -151,18 +155,35 @@ h2::selection {
 
 /* Project 4 */
 .card:nth-child(4) {
-  background: url(/power_portfolio.png) center center/cover;
+  background: url(/project-eight.png) center center/cover;
 }
 
 /* Project 5 */
 .card:nth-child(5) {
-  background: url(/project-five.jpg) center center/cover;
+  background: url(/project-seven.png) center center/cover;
 }
 
 /* Project 6 */
 .card:nth-child(6) {
+  background: url(/project-nine.PNG) center center/cover;
+}
+
+
+/* Project 7 */
+.card:nth-child(7) {
+  background: url(/power_portfolio.png) center center/cover;
+}
+
+/* Project 8 */
+.card:nth-child(8) {
+  background: url(/voiture.PNG) center center/cover;
+}
+
+/* Project 9 */
+.card:nth-child(9) {
   background: url(/projet6.PNG) center center/cover;
 }
+
 
 /* Media Queries */
 @media (max-width: 768px) {
