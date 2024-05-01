@@ -155,12 +155,12 @@ h2::selection {
 
 /* Project 4 */
 .card:nth-child(4) {
-  background: url(/project-eight.png) center center/cover;
+  background: url(/project-eight.PNG) center center/cover;
 }
 
 /* Project 5 */
 .card:nth-child(5) {
-  background: url(/project-seven.png) center center/cover;
+  background: url(/project-seven.PNG) center center/cover;
 }
 
 /* Project 6 */
