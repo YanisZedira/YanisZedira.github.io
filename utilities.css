@@ -114,6 +114,14 @@ h2::selection {
   position: relative;
   overflow: hidden; /* Assure que rien ne dépasse de la carte */
 }
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
 
 
 
@@ -138,51 +146,7 @@ h2::selection {
 
 /* Project Images */
 
-/* project 1 */
-.card:nth-child(1) {
-  background: url(/project-one.png) center center/cover;
-}
-
-/* Project 2 */
-.card:nth-child(2) {
-  background: url(/project-two.png) center center/cover;
-}
-
-/* Project 3 */
-.card:nth-child(3) {
-  background: url(/project-three.png) center center/cover;
-}
-
-/* Project 4 */
-.card:nth-child(4) {
-  background: url(/project-eight.PNG) center center/cover;
-}
-
-/* Project 5 */
-.card:nth-child(5) {
-  background: url(/project-seven.PNG) center center/cover;
-}
-
-/* Project 6 */
-.card:nth-child(6) {
-  background: url(/project-nine.PNG) center center/cover;
-}
-
-
-/* Project 7 */
-.card:nth-child(7) {
-  background: url(/power_portfolio.png) center center/cover;
-}
-
-/* Project 8 */
-.card:nth-child(8) {
-  background: url(/voiture.PNG) center center/cover;
-}
-
-/* Project 9 */
-.card:nth-child(9) {
-  background: url(/cdm.PNG) center center/cover;
-}
+/* Les images seront définies via l'attribut src de la balise img */
 
 
 /* Media Queries */
