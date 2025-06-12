@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Détection du diabète",
+    "tech": "Python",
+    "image": "project-one.png",
+    "url": "https://github.com/YanisZedira/Projects/blob/main/Ai%20Diabete%20prediction/ai%20diabetes%20prediction.ipynb"
+  },
+  {
+    "title": "Classification Cancer du Sein",
+    "tech": "Python",
+    "image": "project-two.png",
+    "url": "https://github.com/YanisZedira/Projects/blob/main/Breast%20Cancer%20Classification/cancer%20classification.ipynb"
+  },
+  {
+    "title": "Modèle Additif",
+    "tech": "Python | Pandas",
+    "image": "project-three.png",
+    "url": "https://github.com/YanisZedira/Projects/tree/main/AdditifModel"
+  },
+  {
+    "title": "Dashboard Amazon Prime Video",
+    "tech": "Power BI",
+    "image": "project-eight.PNG",
+    "url": "https://github.com/YanisZedira/Projects/tree/main/Dashboard_Amazon_Prime_Video"
+  },
+  {
+    "title": "Analyse d'imagerie médicale",
+    "tech": "Python",
+    "image": "project-nine.PNG",
+    "url": "#"
+  },
+  {
+    "title": "Pipeline de données hospitalières",
+    "tech": "GCP | SQL",
+    "image": "projet6.PNG",
+    "url": "#"
+  }
+]

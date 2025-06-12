@@ -1,67 +1,104 @@
-const hamburger = document.querySelector(".hamburger");
-const navMenu = document.querySelector(".nav-menu");
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
 
-hamburger.addEventListener("click", mobileMenu);
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+});
 
-function mobileMenu() {
-  hamburger.classList.toggle("active");
-  navMenu.classList.toggle("active");
-}
-
-// Close navbar when link is clicked
-const navLink = document.querySelectorAll(".nav-link");
-
-navLink.forEach((n) => n.addEventListener("click", closeMenu));
-
-function closeMenu() {
-  hamburger.classList.remove("active");
-  navMenu.classList.remove("active");
-}
-
-// Event Listeners: Handling toggle event
-const toggleSwitch = document.querySelector(
-  '.theme-switch input[type="checkbox"]'
+document.querySelectorAll('.nav-link').forEach(n =>
+  n.addEventListener('click', () => {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+  })
 );
 
-function switchTheme(e) {
-  if (e.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
-  }
-}
-
-toggleSwitch.addEventListener("change", switchTheme, false);
-
-//  Store color theme for future visits
+const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
 
 function switchTheme(e) {
-  if (e.target.checked) {
-    document.documentElement.setAttribute("data-theme", "dark");
-    localStorage.setItem("theme", "dark"); //add this
-  } else {
-    document.documentElement.setAttribute("data-theme", "light");
-    localStorage.setItem("theme", "light"); //add this
-  }
+  const theme = e.target.checked ? 'dark' : 'light';
+  document.documentElement.setAttribute('data-theme', theme);
+  localStorage.setItem('theme', theme);
 }
 
-// Save user preference on load
+toggleSwitch.addEventListener('change', switchTheme);
 
-const currentTheme = localStorage.getItem("theme")
-  ? localStorage.getItem("theme")
-  : null;
-
+const currentTheme = localStorage.getItem('theme');
 if (currentTheme) {
-  document.documentElement.setAttribute("data-theme", currentTheme);
-
-  if (currentTheme === "dark") {
+  document.documentElement.setAttribute('data-theme', currentTheme);
+  if (currentTheme === 'dark') {
     toggleSwitch.checked = true;
   }
 }
 
-//Adding date
+document.querySelector('#datee').textContent = new Date().getFullYear();
 
-let myDate = document.querySelector("#datee");
+const container = document.querySelector('#projects .project');
 
-const yes = new Date().getFullYear();
-myDate.innerHTML = yes;
+function createCard(proj) {
+  const card = document.createElement('div');
+  card.className = 'card';
+  card.innerHTML = `
+    <img src="${proj.image}" alt="${proj.title}">
+    <div class="project-info">
+      <div class="project-bio">
+        <h3>${proj.title}</h3>
+        <p>${proj.tech || ''}</p>
+      </div>
+      <div class="project-link">
+        <i class="fab fa-github"></i>
+      </div>
+    </div>`;
+  if (proj.url) {
+    card.addEventListener('click', () => {
+      window.open(proj.url, '_blank');
+    });
+  }
+  return card;
+}
+
+function loadCustomProjects() {
+  const stored = localStorage.getItem('customProjects');
+  if (!stored) return;
+  JSON.parse(stored).forEach(p => container.appendChild(createCard(p)));
+}
+
+function saveCustomProject(proj) {
+  const stored = localStorage.getItem('customProjects');
+  const list = stored ? JSON.parse(stored) : [];
+  list.push(proj);
+  localStorage.setItem('customProjects', JSON.stringify(list));
+}
+
+fetch('projects.json')
+  .then(response => response.json())
+  .then(projects => {
+    projects.forEach(proj => container.appendChild(createCard(proj)));
+    loadCustomProjects();
+  });
+
+const toggleFormBtn = document.getElementById('toggle-form');
+const form = document.getElementById('project-form');
+
+toggleFormBtn.addEventListener('click', () => {
+  form.classList.toggle('hidden');
+});
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const title = document.getElementById('form-title').value.trim();
+  const url = document.getElementById('form-url').value.trim();
+  const fileInput = document.getElementById('form-image');
+  const file = fileInput.files[0];
+  if (!(title && url && file)) return;
+
+  const reader = new FileReader();
+  reader.onload = function(event) {
+    const proj = { title, url, image: event.target.result };
+    saveCustomProject(proj);
+    container.appendChild(createCard(proj));
+    form.reset();
+    form.classList.add('hidden');
+  };
+  reader.readAsDataURL(file);
+});
