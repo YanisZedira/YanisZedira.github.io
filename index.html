@@ -1,93 +1,68 @@
+
 <!DOCTYPE html>
-<html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Yanis Zedira | Data Analyst &amp; Engineer</title>
-  <meta name="description" content="Je conçois des solutions data au service de la santé. Mes projets allient rigueur analytique, cloud engineering et sens de l’impact médical.">
-  <meta name="keywords" content="data analyst, data engineer, santé, IA, big data, python, sql, power bi, gcp">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="utilities.css">
+<html lang="en">
+  <head>
+    <meta charset="UTF-t" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Portfolio of Yanis Zedira, Data Analyst & Engineer specializing in data solutions for the health sector."
+    />
+    <title>Yanis Zedira - Data Analyst & Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;900&family=Raleway:wght@400;500;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Raleway', 'sans-serif'],
+              display: ['Montserrat', 'sans-serif'],
+            },
+            colors: {
+              'sanofi-blue': '#003DA5',
+              'sanofi-dark-blue': '#0D1D3A',
+              'sanofi-gold': '#C5B358',
+            },
+            animation: {
+              'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+            },
+            keyframes: {
+              fadeInUp: {
+                '0%': { opacity: '0', transform: 'translateY(20px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
+              },
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+      /* For smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.8.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
 </head>
-<body>
-  <header id="hero">
-    <nav class="navbar">
-      <div class="container">
-        <h1 id="logo"><a href="#"><img src="logo.png" alt="Logo Yanis Zedira"></a></h1>
-        <ul class="nav-menu">
-          <li><a class="nav-link" href="#about">À propos</a></li>
-          <li><a class="nav-link" href="#projects">Projets</a></li>
-          <li><a class="nav-link" href="#contact">Contact</a></li>
-          <li><a class="nav-link" href="CV_Yanis_Zedira_Data.pdf" target="_blank">CV</a></li>
-          <li><a class="nav-link btn btn-primary" href="https://github.com/YanisZedira/Projects" target="_blank">GitHub <i class="fas fa-arrow-right"></i></a></li>
-        </ul>
-        <div class="theme-switch">
-          <input type="checkbox" id="switch">
-          <label class="toggle-icons" for="switch">
-            <img class="moon" src="moon.svg" alt="dark mode">
-            <img class="sun" src="sun.svg" alt="light mode">
-          </label>
-        </div>
-        <div class="hamburger">
-          <span class="bar"></span>
-          <span class="bar"></span>
-          <span class="bar"></span>
-        </div>
-      </div>
-    </nav>
-    <section class="header-container">
-      <img class="profile-image" src="b.jpeg" alt="Photo de Yanis Zedira">
-      <h1>Yanis Zedira</h1>
-      <div class="content-text">
-        <h2>Data Analyst &amp; Engineer</h2>
-        <p>Je conçois des solutions data au service de la santé. Mes projets allient rigueur analytique, cloud engineering et sens de l’impact médical.</p>
-      </div>
-      <a href="https://github.com/YanisZedira/Projects" class="btn btn-secondary" target="_blank">GitHub</a>
-      <a href="https://www.linkedin.com/in/yaniszedira/" class="btn btn-secondary" target="_blank">LinkedIn</a>
-    </section>
-  </header>
-
-  <main>
-    <section id="about" class="container">
-      <div class="content-text">
-        <h2>À propos</h2>
-        <p>Analyste et ingénieur data passionné par les enjeux de santé publique, je mets les données massives et l’IA au service des équipes médicales. Mes compétences couvrent Python, SQL, Power BI et Google Cloud Platform.</p>
-      </div>
-    </section>
-
-    <section id="projects" class="project-container container" aria-label="Projets">
-      <div class="division"></div>
-      <div class="content-text">
-        <h2>Mes Projets</h2>
-        <p>Découvrez certains de mes projets personnels et académiques.</p>
-      </div>
-      <article class="project">
-        <!-- Les cartes projets seront insérées ici par script.js -->
-      </article>
-      <a href="https://linktr.ee/yaniszedira" class="btn btn-secondary" target="_blank">Contactez moi <i class="fas fa-arrow-right"></i></a>
-    </section>
-
-    <section id="contact" class="container">
-      <div class="content-text">
-        <h2>Contact</h2>
-        <p>N’hésitez pas à me joindre pour toute opportunité dans le secteur de la santé ou de l’IA.</p>
-      </div>
-      <p><a href="mailto:myanis.zedira@gmail.com">myanis.zedira@gmail.com</a></p>
-    </section>
-  </main>
-
-  <footer id="footer">
-    <div class="container">
-      <a href="mailto:myanis.zedira@gmail.com">myanis.zedira@gmail.com</a>
-      <div class="social">
-        <a href="https://www.linkedin.com/in/yaniszedira/" target="_blank"><img src="linkedin-icon.svg" alt="Linkedin"></a>
-        <a href="https://github.com/YanisZedira/Projects" target="_blank"><img src="github-icon.svg" alt="GitHub"></a>
-      </div>
-      <p id="datee"></p>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
 </html>
