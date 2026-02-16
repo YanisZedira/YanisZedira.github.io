@@ -11,12 +11,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Initialize all features
-    initCustomCursor();
+    initThemeToggle();
     initNavbar();
     initMobileMenu();
     initTypewriter();
     initCountUp();
-    initSkillBars();
     initProjectFilters();
     initBackToTop();
     initContactForm();
@@ -24,49 +23,33 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ==================== 
-// CUSTOM CURSOR
+// THEME TOGGLE
 // ====================
-function initCustomCursor() {
-    const cursor = document.querySelector('.cursor');
-    const follower = document.querySelector('.cursor-follower');
+function initThemeToggle() {
+    const themeToggle = document.getElementById('themeToggle');
+    const body = document.body;
     
-    if (!cursor || !follower) return;
+    // Check for saved theme preference or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
     
-    let mouseX = 0, mouseY = 0;
-    let cursorX = 0, cursorY = 0;
-    let followerX = 0, followerY = 0;
-    
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
-    
-    function animate() {
-        // Cursor
-        cursorX += (mouseX - cursorX) * 0.5;
-        cursorY += (mouseY - cursorY) * 0.5;
-        cursor.style.left = cursorX + 'px';
-        cursor.style.top = cursorY + 'px';
-        
-        // Follower
-        followerX += (mouseX - followerX) * 0.15;
-        followerY += (mouseY - followerY) * 0.15;
-        follower.style.left = followerX + 'px';
-        follower.style.top = followerY + 'px';
-        
-        requestAnimationFrame(animate);
+    if (savedTheme === 'dark') {
+        body.classList.remove('light-mode');
+        body.classList.add('dark-mode');
+    } else {
+        body.classList.remove('dark-mode');
+        body.classList.add('light-mode');
     }
-    animate();
     
-    // Hover effect on links and buttons
-    const interactiveElements = document.querySelectorAll('a, button, .project-card, .skill-card');
-    interactiveElements.forEach(el => {
-        el.addEventListener('mouseenter', () => {
-            follower.classList.add('hover');
-        });
-        el.addEventListener('mouseleave', () => {
-            follower.classList.remove('hover');
-        });
+    themeToggle.addEventListener('click', () => {
+        if (body.classList.contains('light-mode')) {
+            body.classList.remove('light-mode');
+            body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark');
+        } else {
+            body.classList.remove('dark-mode');
+            body.classList.add('light-mode');
+            localStorage.setItem('theme', 'light');
+        }
     });
 }
 
@@ -122,6 +105,8 @@ function initMobileMenu() {
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
+    
+    if (!hamburger || !navMenu) return;
     
     hamburger.addEventListener('click', () => {
         hamburger.classList.toggle('active');
@@ -225,30 +210,6 @@ function initCountUp() {
 }
 
 // ==================== 
-// SKILL BARS ANIMATION
-// ====================
-function initSkillBars() {
-    const skillBars = document.querySelectorAll('.skill-progress');
-    
-    const observerOptions = {
-        threshold: 0.5
-    };
-    
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const bar = entry.target;
-                const progress = bar.getAttribute('data-progress');
-                bar.style.width = progress + '%';
-                observer.unobserve(bar);
-            }
-        });
-    }, observerOptions);
-    
-    skillBars.forEach(bar => observer.observe(bar));
-}
-
-// ==================== 
 // PROJECT FILTERS
 // ====================
 function initProjectFilters() {
@@ -263,12 +224,12 @@ function initProjectFilters() {
             
             const filter = btn.getAttribute('data-filter');
             
-            projectCards.forEach(card => {
+            projectCards.forEach((card, index) => {
                 const category = card.getAttribute('data-category');
                 
                 if (filter === 'all' || category === filter) {
                     card.classList.remove('hidden');
-                    card.style.animation = 'fadeInUp 0.5s ease forwards';
+                    card.style.animation = `fadeInUp 0.5s ease ${index * 0.1}s forwards`;
                 } else {
                     card.classList.add('hidden');
                 }
@@ -282,6 +243,8 @@ function initProjectFilters() {
 // ====================
 function initBackToTop() {
     const backToTop = document.getElementById('backToTop');
+    
+    if (!backToTop) return;
     
     window.addEventListener('scroll', () => {
         if (window.pageYOffset > 300) {
@@ -308,11 +271,22 @@ function initContactForm() {
     if (form) {
         form.addEventListener('submit', function(e) {
             const btn = form.querySelector('.btn-submit');
-            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi...';
+            const originalContent = btn.innerHTML;
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
             btn.disabled = true;
             
-            // Form will submit normally to Formspree
-            // You can add custom handling here if needed
+            // Form submits to Formspree
+            // Reset button after submission (for demo)
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Message envoyé !';
+                btn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalContent;
+                    btn.disabled = false;
+                    btn.style.background = '';
+                }, 3000);
+            }, 1500);
         });
     }
 }
@@ -346,54 +320,9 @@ function initSmoothScroll() {
 }
 
 // ==================== 
-// PARTICLES EFFECT (Optional)
-// ====================
-function createParticles() {
-    const container = document.getElementById('particles');
-    if (!container) return;
-    
-    for (let i = 0; i < 50; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.cssText = `
-            position: absolute;
-            width: ${Math.random() * 5 + 2}px;
-            height: ${Math.random() * 5 + 2}px;
-            background: rgba(99, 102, 241, ${Math.random() * 0.5 + 0.1});
-            border-radius: 50%;
-            top: ${Math.random() * 100}%;
-            left: ${Math.random() * 100}%;
-            animation: float ${Math.random() * 10 + 5}s ease-in-out infinite;
-            animation-delay: ${Math.random() * 5}s;
-        `;
-        container.appendChild(particle);
-    }
-}
-
-// Uncomment to enable particles
-// createParticles();
-
-// ==================== 
-// FADEUP ANIMATION
-// ====================
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes fadeInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-`;
-document.head.appendChild(style);
-
-// ==================== 
 // CONSOLE MESSAGE
 // ====================
-console.log('%c👋 Salut recruteur !', 'font-size: 24px; font-weight: bold; color: #6366f1;');
-console.log('%cIntéressé par mon code ? Contactez-moi !', 'font-size: 14px; color: #a1a1aa;');
-console.log('%cmyanis.zedira@gmail.com', 'font-size: 14px; color: #10b981;');
+console.log('%c👋 Bonjour !', 'font-size: 24px; font-weight: bold; color: #10b981;');
+console.log('%cMerci de visiter mon portfolio.', 'font-size: 14px; color: #4a4a5a;');
+console.log('%cIntéressé(e) ? Contactez-moi !', 'font-size: 14px; color: #6366f1;');
+console.log('%cmyanis.zedira@gmail.com', 'font-size: 14px; color: #10b981; font-weight: bold;');
