@@ -23,14 +23,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ==================== 
-// THEME TOGGLE
+// THEME TOGGLE (Fonctionnel)
 // ====================
 function initThemeToggle() {
     const themeToggle = document.getElementById('themeToggle');
     const body = document.body;
     
-    // Check for saved theme preference or default to light
-    const savedTheme = localStorage.getItem('theme') || 'light';
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme');
     
     if (savedTheme === 'dark') {
         body.classList.remove('light-mode');
@@ -40,7 +40,8 @@ function initThemeToggle() {
         body.classList.add('light-mode');
     }
     
-    themeToggle.addEventListener('click', () => {
+    // Toggle theme on click
+    themeToggle.addEventListener('click', function() {
         if (body.classList.contains('light-mode')) {
             body.classList.remove('light-mode');
             body.classList.add('dark-mode');
@@ -58,38 +59,30 @@ function initThemeToggle() {
 // ====================
 function initNavbar() {
     const navbar = document.getElementById('navbar');
-    let lastScroll = 0;
     
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        // Add scrolled class
-        if (currentScroll > 50) {
+    window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
-        
-        lastScroll = currentScroll;
     });
     
     // Active link on scroll
     const sections = document.querySelectorAll('section[id]');
     const navLinks = document.querySelectorAll('.nav-link');
     
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', function() {
         let current = '';
         
-        sections.forEach(section => {
+        sections.forEach(function(section) {
             const sectionTop = section.offsetTop - 100;
-            const sectionHeight = section.clientHeight;
-            
             if (window.pageYOffset >= sectionTop) {
                 current = section.getAttribute('id');
             }
         });
         
-        navLinks.forEach(link => {
+        navLinks.forEach(function(link) {
             link.classList.remove('active');
             if (link.getAttribute('href').slice(1) === current) {
                 link.classList.add('active');
@@ -108,14 +101,14 @@ function initMobileMenu() {
     
     if (!hamburger || !navMenu) return;
     
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', function() {
         hamburger.classList.toggle('active');
         navMenu.classList.toggle('active');
         document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
     });
     
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
+    navLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
             hamburger.classList.remove('active');
             navMenu.classList.remove('active');
             document.body.style.overflow = '';
@@ -124,7 +117,7 @@ function initMobileMenu() {
 }
 
 // ==================== 
-// TYPEWRITER EFFECT
+// TYPEWRITER EFFECT (Sans Cloud Enthusiast)
 // ====================
 function initTypewriter() {
     const typewriter = document.getElementById('typewriter');
@@ -134,8 +127,7 @@ function initTypewriter() {
         'Data Engineer',
         'Data Analyst',
         'Power BI Expert',
-        'Python Developer',
-        'Cloud Enthusiast'
+        'Python Developer'
     ];
     
     let textIndex = 0;
@@ -158,11 +150,11 @@ function initTypewriter() {
         
         if (!isDeleting && charIndex === currentText.length) {
             isDeleting = true;
-            typingSpeed = 2000; // Pause at end
+            typingSpeed = 2000;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             textIndex = (textIndex + 1) % texts.length;
-            typingSpeed = 500; // Pause before next word
+            typingSpeed = 500;
         }
         
         setTimeout(type, typingSpeed);
@@ -181,8 +173,8 @@ function initCountUp() {
         threshold: 0.5
     };
     
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
             if (entry.isIntersecting) {
                 const counter = entry.target;
                 const target = parseInt(counter.getAttribute('data-count'));
@@ -190,7 +182,7 @@ function initCountUp() {
                 const increment = target / (duration / 16);
                 let current = 0;
                 
-                const updateCounter = () => {
+                function updateCounter() {
                     current += increment;
                     if (current < target) {
                         counter.textContent = Math.ceil(current);
@@ -198,7 +190,7 @@ function initCountUp() {
                     } else {
                         counter.textContent = target + '+';
                     }
-                };
+                }
                 
                 updateCounter();
                 observer.unobserve(counter);
@@ -206,7 +198,9 @@ function initCountUp() {
         });
     }, observerOptions);
     
-    counters.forEach(counter => observer.observe(counter));
+    counters.forEach(function(counter) {
+        observer.observe(counter);
+    });
 }
 
 // ==================== 
@@ -216,20 +210,22 @@ function initProjectFilters() {
     const filterBtns = document.querySelectorAll('.filter-btn');
     const projectCards = document.querySelectorAll('.project-card');
     
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
+    filterBtns.forEach(function(btn) {
+        btn.addEventListener('click', function() {
             // Update active button
-            filterBtns.forEach(b => b.classList.remove('active'));
+            filterBtns.forEach(function(b) {
+                b.classList.remove('active');
+            });
             btn.classList.add('active');
             
             const filter = btn.getAttribute('data-filter');
             
-            projectCards.forEach((card, index) => {
+            projectCards.forEach(function(card, index) {
                 const category = card.getAttribute('data-category');
                 
                 if (filter === 'all' || category === filter) {
                     card.classList.remove('hidden');
-                    card.style.animation = `fadeInUp 0.5s ease ${index * 0.1}s forwards`;
+                    card.style.animation = 'fadeInUp 0.5s ease ' + (index * 0.1) + 's forwards';
                 } else {
                     card.classList.add('hidden');
                 }
@@ -246,7 +242,7 @@ function initBackToTop() {
     
     if (!backToTop) return;
     
-    window.addEventListener('scroll', () => {
+    window.addEventListener('scroll', function() {
         if (window.pageYOffset > 300) {
             backToTop.classList.add('visible');
         } else {
@@ -254,7 +250,7 @@ function initBackToTop() {
         }
     });
     
-    backToTop.addEventListener('click', () => {
+    backToTop.addEventListener('click', function() {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
@@ -274,19 +270,6 @@ function initContactForm() {
             const originalContent = btn.innerHTML;
             btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Envoi en cours...';
             btn.disabled = true;
-            
-            // Form submits to Formspree
-            // Reset button after submission (for demo)
-            setTimeout(() => {
-                btn.innerHTML = '<i class="fas fa-check"></i> Message envoyé !';
-                btn.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)';
-                
-                setTimeout(() => {
-                    btn.innerHTML = originalContent;
-                    btn.disabled = false;
-                    btn.style.background = '';
-                }, 3000);
-            }, 1500);
         });
     }
 }
@@ -297,7 +280,7 @@ function initContactForm() {
 function initSmoothScroll() {
     const links = document.querySelectorAll('a[href^="#"]');
     
-    links.forEach(link => {
+    links.forEach(function(link) {
         link.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
             
@@ -324,5 +307,4 @@ function initSmoothScroll() {
 // ====================
 console.log('%c👋 Bonjour !', 'font-size: 24px; font-weight: bold; color: #10b981;');
 console.log('%cMerci de visiter mon portfolio.', 'font-size: 14px; color: #4a4a5a;');
-console.log('%cIntéressé(e) ? Contactez-moi !', 'font-size: 14px; color: #6366f1;');
-console.log('%cmyanis.zedira@gmail.com', 'font-size: 14px; color: #10b981; font-weight: bold;');
+console.log('%cIntéressé(e) ? Contactez-moi : myanis.zedira@gmail.com', 'font-size: 14px; color: #10b981; font-weight: bold;');
