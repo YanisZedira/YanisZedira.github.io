@@ -3,11 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio de Yanis Zedira - Data Engineer & Data Analyst spécialisé en pipelines ETL, BigQuery, Power BI et transition énergétique">
-    <meta name="keywords" content="Data Engineer, Data Analyst, Python, SQL, BigQuery, Power BI, ETL">
+    <meta name="description" content="Portfolio de Yanis Zedira - Data Engineer & Data Analyst spécialisé en pipelines ETL, BigQuery, Power BI">
+    <meta name="keywords" content="Data Engineer, Data Analyst, Python, SQL, BigQuery, Power BI, ETL, Alternance">
     <meta name="author" content="Yanis Zedira">
     
     <title>Yanis Zedira | Data Engineer & Analyst</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,15 +20,20 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
+    <!-- Devicons for tech logos -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    
     <!-- AOS Animation Library -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <!-- Cursor Effect -->
-    <div class="cursor"></div>
-    <div class="cursor-follower"></div>
+<body class="light-mode">
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Changer de thème">
+        <i class="fas fa-moon"></i>
+        <i class="fas fa-sun"></i>
+    </button>
 
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -41,7 +49,7 @@
                 <li><a href="#education" class="nav-link">Formation</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
                 <li>
-                    <a href="https://github.com/YanisZedira/cv.pdf" target="_blank" class="nav-btn">
+                    <a href="https://github.com/YanisZedira/YanisZedira/raw/main/CV_Yanis_Zedira.pdf" target="_blank" class="nav-btn">
                         <i class="fas fa-download"></i> CV
                     </a>
                 </li>
@@ -56,23 +64,23 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero">
-        <div class="hero-particles" id="particles"></div>
+        <div class="hero-bg-pattern"></div>
         <div class="hero-container">
             <div class="hero-content" data-aos="fade-right" data-aos-duration="1000">
                 <div class="hero-badge">
                     <span class="badge-dot"></span>
-                    Disponible en alternance
+                    À la recherche d'une alternance
                 </div>
                 <h1 class="hero-title">
-                    Salut, je suis <span class="gradient-text">Yanis Zedira</span>
+                    Bonjour, je suis <span class="gradient-text">Yanis Zedira</span>
                 </h1>
                 <h2 class="hero-subtitle">
                     <span class="typewriter" id="typewriter"></span>
                 </h2>
                 <p class="hero-description">
-                    Data Engineer & Analyst passionné par la <strong>transition énergétique</strong>. 
-                    Je conçois des pipelines de données robustes et des dashboards stratégiques 
-                    pour transformer les données en décisions impactantes.
+                    Data Engineer & Analyst avec <strong>2 ans d'expérience</strong> en conception de pipelines de données 
+                    et création de dashboards stratégiques. Je transforme les données brutes en 
+                    insights actionnables pour accompagner la prise de décision.
                 </p>
                 <div class="hero-stats">
                     <div class="stat-item">
@@ -90,7 +98,7 @@
                 </div>
                 <div class="hero-buttons">
                     <a href="#projects" class="btn btn-primary">
-                        <i class="fas fa-rocket"></i> Voir mes projets
+                        <i class="fas fa-rocket"></i> Découvrir mes projets
                     </a>
                     <a href="#contact" class="btn btn-secondary">
                         <i class="fas fa-envelope"></i> Me contacter
@@ -112,15 +120,15 @@
                 <div class="image-container">
                     <div class="image-ring"></div>
                     <div class="image-ring ring-2"></div>
-                    <img src="assets/profile.jpg" alt="Yanis Zedira - Data Engineer" class="profile-img">
+                    <img src="assets/profile.jpg" alt="Yanis Zedira - Data Engineer & Analyst" class="profile-img">
                     <div class="floating-badge badge-1">
-                        <i class="fab fa-python"></i>
+                        <i class="devicon-python-plain colored"></i>
                     </div>
                     <div class="floating-badge badge-2">
-                        <i class="fas fa-database"></i>
+                        <i class="devicon-postgresql-plain colored"></i>
                     </div>
                     <div class="floating-badge badge-3">
-                        <i class="fab fa-google"></i>
+                        <i class="devicon-googlecloud-plain colored"></i>
                     </div>
                     <div class="floating-badge badge-4">
                         <i class="fas fa-chart-line"></i>
@@ -145,28 +153,29 @@
             <div class="about-content">
                 <div class="about-text" data-aos="fade-right" data-aos-delay="200">
                     <p>
-                        Actuellement en alternance chez <strong>SUEZ</strong> et étudiant à l'<strong>ESILV</strong> 
-                        en MSc Computer Science & Data Science, je capitalise sur <strong>2 ans d'expérience</strong> 
-                        en tant que Data Engineer et Data Analyst.
+                        Actuellement en alternance chez <strong>SUEZ</strong> en tant que Data Engineer / Analyst, 
+                        je prépare mon entrée à l'<strong>ESILV</strong> (École Supérieure d'Ingénieurs Léonard de Vinci) 
+                        en septembre 2026 pour un MSc en Computer Science & Data Science.
                     </p>
                     <p>
-                        Ma mission ? <span class="highlight">Centraliser, transformer et valoriser les données</span> 
-                        pour permettre une prise de décision éclairée. Je suis passionné par la 
-                        <strong>transition énergétique</strong> et convaincu que la data est un levier 
-                        essentiel pour construire un avenir plus durable.
+                        Fort de <span class="highlight">2 années d'expérience</span> dans la data, j'ai développé 
+                        une expertise solide en conception de pipelines ETL/ELT, modélisation de données et 
+                        création de dashboards pour le pilotage stratégique d'entreprise.
                     </p>
                     <p>
-                        Mon approche combine rigueur technique et vision business, avec une attention 
-                        particulière à la qualité des données et à l'industrialisation des processus.
+                        Mon approche combine <strong>rigueur technique</strong> et <strong>vision business</strong>. 
+                        Je m'attache à comprendre les enjeux métiers pour livrer des solutions data qui génèrent 
+                        une réelle valeur ajoutée. Mon objectif : devenir un acteur clé de la transformation 
+                        data-driven des organisations.
                     </p>
                     <div class="about-highlights">
                         <div class="highlight-item">
                             <i class="fas fa-check-circle"></i>
-                            <span>Pipeline ELT end-to-end</span>
+                            <span>Pipelines ETL/ELT robustes</span>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-check-circle"></i>
-                            <span>Dashboard Power BI stratégiques</span>
+                            <span>Dashboards Power BI avancés</span>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-check-circle"></i>
@@ -194,16 +203,16 @@
                                 <span class="info-value">Data Engineer @ SUEZ</span>
                             </li>
                             <li>
-                                <span class="info-label">Formation</span>
-                                <span class="info-value">MSc ESILV (2026-2028)</span>
+                                <span class="info-label">Prochaine formation</span>
+                                <span class="info-value">MSc ESILV (Sept. 2026)</span>
                             </li>
                             <li>
-                                <span class="info-label">Rythme</span>
-                                <span class="info-value">3 sem. entreprise / 1 sem. école</span>
+                                <span class="info-label">Rythme alternance</span>
+                                <span class="info-value">3 sem. / 1 sem.</span>
                             </li>
                             <li>
                                 <span class="info-label">Mobilité</span>
-                                <span class="info-value">Mobile géographiquement</span>
+                                <span class="info-value">France entière</span>
                             </li>
                         </ul>
                         <div class="info-languages">
@@ -212,7 +221,7 @@
                                 <span class="tag">🇫🇷 Français (Natif)</span>
                                 <span class="tag">🇬🇧 Anglais (C1 - TOEIC)</span>
                                 <span class="tag">🇪🇸 Espagnol (B1)</span>
-                                <span class="tag">🇸🇦 Arabe</span>
+                                <span class="tag">🇸🇦 Arabe (Dialectal)</span>
                             </div>
                         </div>
                     </div>
@@ -227,113 +236,201 @@
             <h2 class="section-title" data-aos="fade-up">
                 <span class="title-number">02.</span> Compétences techniques
             </h2>
-            <div class="skills-grid">
-                <!-- Data Engineering -->
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="skill-icon">
+            
+            <div class="skills-categories">
+                <!-- Data Engineering & Cloud -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="category-title">
                         <i class="fas fa-database"></i>
-                    </div>
-                    <h3>Data Engineering & Cloud</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">SQL</span>
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">dbt</span>
-                        <span class="skill-tag">BigQuery</span>
-                        <span class="skill-tag">ETL/ELT</span>
-                        <span class="skill-tag">GCP</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="90"></div>
+                        Data Engineering & Cloud
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="devicon-python-plain colored"></i>
+                            <span>Python</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-postgresql-plain colored"></i>
+                            <span>SQL</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-googlecloud-plain colored"></i>
+                            <span>BigQuery</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://seeklogo.com/images/D/dbt-logo-500AB0BAA7-seeklogo.com.png" alt="dbt">
+                            <span>dbt</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>ETL/ELT</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-googlecloud-plain colored"></i>
+                            <span>GCP</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Analytics & BI -->
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="skill-icon">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="category-title">
                         <i class="fas fa-chart-pie"></i>
-                    </div>
-                    <h3>Analytics & BI</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Power BI</span>
-                        <span class="skill-tag">DAX</span>
-                        <span class="skill-tag">Looker Studio</span>
-                        <span class="skill-tag">Tableau</span>
-                        <span class="skill-tag">Streamlit</span>
-                        <span class="skill-tag">RLS</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="95"></div>
+                        Analytics & Business Intelligence
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI">
+                            <span>Power BI</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://www.svgrepo.com/show/354012/looker-icon.svg" alt="Looker">
+                            <span>Looker Studio</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://cdn.worldvectorlogo.com/logos/tableau-software.svg" alt="Tableau">
+                            <span>Tableau</span>
+                        </div>
+                        <div class="skill-item">
+                            <img src="https://streamlit.io/images/brand/streamlit-mark-color.svg" alt="Streamlit">
+                            <span>Streamlit</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-file-excel"></i>
+                            <span>Excel</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-lock"></i>
+                            <span>RLS Security</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- DataOps -->
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="skill-icon">
+                <!-- DataOps & Versioning -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
+                    <h3 class="category-title">
                         <i class="fas fa-cogs"></i>
-                    </div>
-                    <h3>DataOps & Qualité</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Azure DevOps</span>
-                        <span class="skill-tag">Git</span>
-                        <span class="skill-tag">CI/CD</span>
-                        <span class="skill-tag">Code Review</span>
-                        <span class="skill-tag">Documentation</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="85"></div>
+                        DataOps & Versioning
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="devicon-git-plain colored"></i>
+                            <span>Git</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-github-original"></i>
+                            <span>GitHub</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-azure-plain colored"></i>
+                            <span>Azure DevOps</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code-branch"></i>
+                            <span>CI/CD</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-file-alt"></i>
+                            <span>Documentation</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-code-pull-request"></i>
+                            <span>Code Review</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Automatisation -->
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="400">
-                    <div class="skill-icon">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
+                    <h3 class="category-title">
                         <i class="fas fa-robot"></i>
-                    </div>
-                    <h3>Automatisation</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Power Automate</span>
-                        <span class="skill-tag">API REST</span>
-                        <span class="skill-tag">SFTP</span>
-                        <span class="skill-tag">Scripting</span>
-                        <span class="skill-tag">Workflows</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="80"></div>
+                        Automatisation & Scripting
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Power Automate">
+                            <span>Power Automate</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-plug"></i>
+                            <span>API REST</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-server"></i>
+                            <span>SFTP</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-terminal"></i>
+                            <span>Scripting</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-project-diagram"></i>
+                            <span>Workflows</span>
+                        </div>
                     </div>
                 </div>
 
                 <!-- Machine Learning -->
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="500">
-                    <div class="skill-icon">
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="500">
+                    <h3 class="category-title">
                         <i class="fas fa-brain"></i>
-                    </div>
-                    <h3>Machine Learning</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Classification</span>
-                        <span class="skill-tag">Régression</span>
-                        <span class="skill-tag">CNN</span>
-                        <span class="skill-tag">Clustering</span>
-                        <span class="skill-tag">Scikit-learn</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="75"></div>
+                        Machine Learning & IA
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="Scikit-learn">
+                            <span>Scikit-learn</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-tensorflow-original colored"></i>
+                            <span>TensorFlow</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-pandas-original colored"></i>
+                            <span>Pandas</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="devicon-numpy-original colored"></i>
+                            <span>NumPy</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Classification</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-network-wired"></i>
+                            <span>CNN</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Domaine -->
-                <div class="skill-card" data-aos="fade-up" data-aos-delay="600">
-                    <div class="skill-icon">
-                        <i class="fas fa-leaf"></i>
-                    </div>
-                    <h3>Secteur Énergétique</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Transition énergétique</span>
-                        <span class="skill-tag">Smart Grids</span>
-                        <span class="skill-tag">Monitoring</span>
-                        <span class="skill-tag">ENR</span>
-                    </div>
-                    <div class="skill-bar">
-                        <div class="skill-progress" data-progress="70"></div>
+                <!-- Méthodologie -->
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="600">
+                    <h3 class="category-title">
+                        <i class="fas fa-tasks"></i>
+                        Méthodologie & Soft Skills
+                    </h3>
+                    <div class="skills-list">
+                        <div class="skill-item">
+                            <i class="fas fa-sync-alt"></i>
+                            <span>Agile / Scrum</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-cubes"></i>
+                            <span>Mode Produit</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-users"></i>
+                            <span>Collaboration</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Amélioration continue</span>
+                        </div>
+                        <div class="skill-item">
+                            <i class="fas fa-comments"></i>
+                            <span>Communication</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -344,22 +441,26 @@
                 <div class="cert-grid">
                     <div class="cert-card">
                         <div class="cert-badge">
-                            <i class="fab fa-microsoft"></i>
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
                         </div>
                         <div class="cert-info">
                             <h4>Microsoft PL-300</h4>
                             <p>Power BI Data Analyst</p>
-                            <span class="cert-status obtained">Obtenue</span>
+                            <span class="cert-status obtained">
+                                <i class="fas fa-check-circle"></i> Obtenue
+                            </span>
                         </div>
                     </div>
                     <div class="cert-card">
                         <div class="cert-badge">
-                            <i class="fab fa-google"></i>
+                            <img src="https://www.gstatic.com/devrel-devsite/prod/v0e0f589edd85502a40d78d7d0825db8ea5ef3b99ab4070381ee86977c9168730/cloud/images/cloud-logo.svg" alt="Google Cloud">
                         </div>
                         <div class="cert-info">
                             <h4>Google Cloud Professional</h4>
                             <p>Data Engineer</p>
-                            <span class="cert-status in-progress">En préparation</span>
+                            <span class="cert-status in-progress">
+                                <i class="fas fa-spinner"></i> En préparation
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -381,49 +482,49 @@
                     </div>
                     <div class="timeline-content">
                         <div class="timeline-header">
-                            <div class="company-logo suez">
-                                <span>SUEZ</span>
+                            <div class="company-info">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/8/89/Suez_logo_2022.png" alt="SUEZ" class="company-logo">
+                                <div>
+                                    <h3 class="timeline-title">Data Engineer / Data Analyst</h3>
+                                    <p class="timeline-subtitle">Alternance</p>
+                                </div>
                             </div>
                             <div class="timeline-date">
                                 <i class="fas fa-calendar-alt"></i>
                                 Sept. 2024 - Présent
                             </div>
                         </div>
-                        <h3 class="timeline-title">Data Engineer / Data Analyst</h3>
-                        <p class="timeline-subtitle">Alternance - Paris</p>
                         <ul class="timeline-list">
                             <li>
                                 <i class="fas fa-check"></i>
-                                Centralisation et transformation des données de facturation et RH sur <strong>BigQuery</strong> pour garantir une source de vérité fiable et unique
+                                <span>Centralisation et transformation des données de facturation et RH sur <strong>BigQuery</strong> pour garantir une source de vérité fiable et unique</span>
                             </li>
                             <li>
                                 <i class="fas fa-check"></i>
-                                Participation à la structuration des données (modèles, tables, schémas relationnels) et leur exploitation cloud
+                                <span>Structuration des données (modèles, tables, schémas relationnels) et exploitation cloud</span>
                             </li>
                             <li>
                                 <i class="fas fa-check"></i>
-                                Industrialisation des processus via <strong>Power Automate</strong> (envoi automatique de mails, rapports paginés)
+                                <span>Industrialisation via <strong>Power Automate</strong> : envoi automatique de mails et rapports paginés</span>
                             </li>
                             <li>
-                                <i class="fas fa-check"></i>
+                                <i class="fas fa-star achievement"></i>
                                 <span class="achievement">Réduction du temps de traitement du bilan collaborateur de 3 semaines à 3 jours</span>
                             </li>
                             <li>
                                 <i class="fas fa-check"></i>
-                                Conception de dashboards <strong>Power BI</strong> pour le pilotage stratégique multi-domaines (RH, Sécurité, Finance, Organisation)
+                                <span>Conception de dashboards <strong>Power BI</strong> pour le pilotage stratégique (RH, Sécurité, Finance)</span>
                             </li>
                             <li>
                                 <i class="fas fa-check"></i>
-                                Mise en place de la sécurité <strong>RLS</strong> pour restreindre la visibilité des données par utilisateur
+                                <span>Mise en place de la sécurité <strong>RLS</strong> pour restreindre la visibilité des données par utilisateur</span>
                             </li>
                         </ul>
                         <div class="timeline-tags">
-                            <span>BigQuery</span>
-                            <span>Power BI</span>
-                            <span>Power Automate</span>
-                            <span>SQL</span>
-                            <span>Python</span>
-                            <span>dbt</span>
+                            <span><i class="devicon-googlecloud-plain"></i> BigQuery</span>
+                            <span><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt=""> Power BI</span>
+                            <span><i class="devicon-python-plain"></i> Python</span>
+                            <span><i class="devicon-postgresql-plain"></i> SQL</span>
                         </div>
                     </div>
                 </div>
@@ -435,30 +536,32 @@
                     </div>
                     <div class="timeline-content">
                         <div class="timeline-header">
-                            <div class="company-logo europe">
-                                <span>EH</span>
+                            <div class="company-info">
+                                <div class="company-logo-placeholder">EH</div>
+                                <div>
+                                    <h3 class="timeline-title">Agent d'accueil</h3>
+                                    <p class="timeline-subtitle">Groupe Europe Handling - Aéroport Paris CDG</p>
+                                </div>
                             </div>
                             <div class="timeline-date">
                                 <i class="fas fa-calendar-alt"></i>
                                 Sept. 2023 - Oct. 2023
                             </div>
                         </div>
-                        <h3 class="timeline-title">Agent d'accueil</h3>
-                        <p class="timeline-subtitle">Groupe Europe Handling - Aéroport Paris CDG</p>
                         <ul class="timeline-list">
                             <li>
                                 <i class="fas fa-check"></i>
-                                Gestion de l'accueil passagers en zone internationale et Schengen
+                                <span>Gestion de l'accueil passagers en zone internationale et Schengen</span>
                             </li>
                             <li>
                                 <i class="fas fa-check"></i>
-                                Coordination des flux passagers et application stricte des procédures de sûreté
+                                <span>Coordination des flux passagers et application des procédures de sûreté</span>
                             </li>
                         </ul>
                         <div class="timeline-tags">
                             <span>Relation client</span>
                             <span>Gestion de flux</span>
-                            <span>Procédures</span>
+                            <span>Travail en équipe</span>
                         </div>
                     </div>
                 </div>
@@ -473,206 +576,177 @@
                 <span class="title-number">04.</span> Mes projets
             </h2>
             <p class="section-subtitle" data-aos="fade-up" data-aos-delay="100">
-                Une sélection de mes projets Data Engineering, Machine Learning et Business Intelligence
+                Une sélection de mes réalisations en Data Engineering, Machine Learning et Business Intelligence
             </p>
 
             <!-- Filter Buttons -->
             <div class="project-filters" data-aos="fade-up" data-aos-delay="200">
-                <button class="filter-btn active" data-filter="all">Tous</button>
-                <button class="filter-btn" data-filter="data-engineering">Data Engineering</button>
-                <button class="filter-btn" data-filter="machine-learning">Machine Learning</button>
-                <button class="filter-btn" data-filter="bi">Business Intelligence</button>
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-th-large"></i> Tous
+                </button>
+                <button class="filter-btn" data-filter="data-engineering">
+                    <i class="fas fa-database"></i> Data Engineering
+                </button>
+                <button class="filter-btn" data-filter="machine-learning">
+                    <i class="fas fa-brain"></i> Machine Learning
+                </button>
+                <button class="filter-btn" data-filter="bi">
+                    <i class="fas fa-chart-bar"></i> Business Intelligence
+                </button>
             </div>
 
             <!-- Projects Grid -->
             <div class="projects-grid">
                 <!-- Project 1: Pipeline ELT Sanofi -->
-                <div class="project-card" data-category="data-engineering" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-image">
+                <article class="project-card" data-category="data-engineering" data-aos="fade-up" data-aos-delay="100">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800');">
                         <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/YanisZedira/pipeline-elt-sanofi" target="_blank" class="project-link" aria-label="Voir sur GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                                <a href="#" class="project-link" aria-label="Voir le projet">
-                                    <i class="fas fa-external-link-alt"></i>
-                                </a>
-                            </div>
+                            <a href="https://github.com/YanisZedira/pipeline-elt-sanofi" target="_blank" class="project-link-btn" aria-label="Voir sur GitHub">
+                                <i class="fab fa-github"></i>
+                                <span>Voir le code</span>
+                            </a>
                         </div>
-                        <div class="project-icon">
-                            <i class="fas fa-stream"></i>
-                        </div>
+                        <span class="project-category-badge">Data Engineering</span>
                     </div>
                     <div class="project-content">
-                        <span class="project-category">Data Engineering</span>
-                        <h3 class="project-title">Pipeline ELT End-to-End (Sanofi)</h3>
+                        <h3 class="project-title">Pipeline ELT End-to-End</h3>
                         <p class="project-description">
-                            Pipeline complet d'ingestion et transformation de données sur BigQuery, 
-                            avec automatisation et reporting via Looker Studio.
+                            Pipeline complet d'ingestion et transformation de données sur BigQuery avec automatisation et reporting Looker Studio.
                         </p>
                         <div class="project-tech">
-                            <span>BigQuery</span>
-                            <span>Python</span>
+                            <span><i class="devicon-googlecloud-plain colored"></i> BigQuery</span>
+                            <span><i class="devicon-python-plain colored"></i> Python</span>
                             <span>dbt</span>
                             <span>Looker Studio</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Project 2: Cancer Prediction -->
-                <div class="project-card" data-category="machine-learning" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-image">
+                <article class="project-card" data-category="machine-learning" data-aos="fade-up" data-aos-delay="200">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1576671081837-49000212a370?w=800');">
                         <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/YanisZedira/breast-cancer-prediction" target="_blank" class="project-link" aria-label="Voir sur GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
+                            <a href="https://github.com/YanisZedira/breast-cancer-prediction" target="_blank" class="project-link-btn" aria-label="Voir sur GitHub">
+                                <i class="fab fa-github"></i>
+                                <span>Voir le code</span>
+                            </a>
                         </div>
-                        <div class="project-icon">
-                            <i class="fas fa-heartbeat"></i>
-                        </div>
+                        <span class="project-category-badge">Machine Learning</span>
                     </div>
                     <div class="project-content">
-                        <span class="project-category">Machine Learning</span>
                         <h3 class="project-title">Prédiction Cancer du Sein</h3>
                         <p class="project-description">
-                            Modèle de classification supervisée pour la prédiction du cancer du sein 
-                            basé sur l'analyse exploratoire de données médicales.
+                            Modèle de classification supervisée pour la prédiction du cancer basé sur l'analyse exploratoire de données médicales.
                         </p>
                         <div class="project-tech">
-                            <span>Python</span>
+                            <span><i class="devicon-python-plain colored"></i> Python</span>
                             <span>Scikit-learn</span>
-                            <span>Pandas</span>
-                            <span>EDA</span>
+                            <span><i class="devicon-pandas-original colored"></i> Pandas</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Project 3: Malaria Detection -->
-                <div class="project-card" data-category="machine-learning" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-image">
+                <article class="project-card" data-category="machine-learning" data-aos="fade-up" data-aos-delay="300">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1530026405186-ed1f139313f8?w=800');">
                         <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/YanisZedira/malaria-detection" target="_blank" class="project-link" aria-label="Voir sur GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
+                            <a href="https://github.com/YanisZedira/malaria-detection" target="_blank" class="project-link-btn" aria-label="Voir sur GitHub">
+                                <i class="fab fa-github"></i>
+                                <span>Voir le code</span>
+                            </a>
                         </div>
-                        <div class="project-icon">
-                            <i class="fas fa-microscope"></i>
-                        </div>
+                        <span class="project-category-badge">Deep Learning</span>
                     </div>
                     <div class="project-content">
-                        <span class="project-category">Deep Learning</span>
                         <h3 class="project-title">Détection de la Malaria</h3>
                         <p class="project-description">
-                            Modèle CNN pour la détection de la malaria par reconnaissance 
-                            d'images de cellules sanguines en temps réel.
+                            Modèle CNN pour la détection de la malaria par reconnaissance d'images de cellules sanguines en temps réel.
                         </p>
                         <div class="project-tech">
-                            <span>Python</span>
-                            <span>TensorFlow</span>
+                            <span><i class="devicon-python-plain colored"></i> Python</span>
+                            <span><i class="devicon-tensorflow-original colored"></i> TensorFlow</span>
                             <span>CNN</span>
                             <span>OpenCV</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Project 4: Face Recognition -->
-                <div class="project-card" data-category="machine-learning" data-aos="fade-up" data-aos-delay="400">
-                    <div class="project-image">
+                <article class="project-card" data-category="machine-learning" data-aos="fade-up" data-aos-delay="400">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1555421689-491a97ff2040?w=800');">
                         <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/YanisZedira/face-recognition-auth" target="_blank" class="project-link" aria-label="Voir sur GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
+                            <a href="https://github.com/YanisZedira/face-recognition-auth" target="_blank" class="project-link-btn" aria-label="Voir sur GitHub">
+                                <i class="fab fa-github"></i>
+                                <span>Voir le code</span>
+                            </a>
                         </div>
-                        <div class="project-icon">
-                            <i class="fas fa-user-shield"></i>
-                        </div>
+                        <span class="project-category-badge">Computer Vision</span>
                     </div>
                     <div class="project-content">
-                        <span class="project-category">Computer Vision</span>
                         <h3 class="project-title">Reconnaissance Faciale</h3>
                         <p class="project-description">
-                            Système de reconnaissance faciale en temps réel pour 
-                            l'authentification sécurisée de comptes étudiants.
+                            Système de reconnaissance faciale en temps réel pour l'authentification sécurisée de comptes utilisateurs.
                         </p>
                         <div class="project-tech">
-                            <span>Python</span>
+                            <span><i class="devicon-python-plain colored"></i> Python</span>
                             <span>Face Recognition</span>
                             <span>OpenCV</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Project 5: Diabetes Prediction -->
-                <div class="project-card" data-category="machine-learning" data-aos="fade-up" data-aos-delay="500">
-                    <div class="project-image">
+                <article class="project-card" data-category="machine-learning" data-aos="fade-up" data-aos-delay="500">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?w=800');">
                         <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://github.com/YanisZedira/diabetes-prediction" target="_blank" class="project-link" aria-label="Voir sur GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
+                            <a href="https://github.com/YanisZedira/diabetes-prediction" target="_blank" class="project-link-btn" aria-label="Voir sur GitHub">
+                                <i class="fab fa-github"></i>
+                                <span>Voir le code</span>
+                            </a>
                         </div>
-                        <div class="project-icon">
-                            <i class="fas fa-syringe"></i>
-                        </div>
+                        <span class="project-category-badge">Machine Learning</span>
                     </div>
                     <div class="project-content">
-                        <span class="project-category">Machine Learning</span>
                         <h3 class="project-title">Prédiction du Diabète</h3>
                         <p class="project-description">
-                            Modèle prédictif du diabète à partir de données médicales 
-                            avec analyse exploratoire approfondie.
+                            Modèle prédictif du diabète à partir de données médicales avec analyse exploratoire approfondie.
                         </p>
                         <div class="project-tech">
-                            <span>Python</span>
-                            <span>Pandas</span>
+                            <span><i class="devicon-python-plain colored"></i> Python</span>
+                            <span><i class="devicon-pandas-original colored"></i> Pandas</span>
                             <span>Scikit-learn</span>
                         </div>
                     </div>
-                </div>
+                </article>
 
                 <!-- Project 6: Energy Dashboard -->
-                <div class="project-card" data-category="bi" data-aos="fade-up" data-aos-delay="600">
-                    <div class="project-image">
+                <article class="project-card" data-category="bi" data-aos="fade-up" data-aos-delay="600">
+                    <div class="project-image" style="background-image: url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800');">
                         <div class="project-overlay">
-                            <div class="project-links">
-                                <a href="https://app.powerbi.com/TONLIEN" target="_blank" class="project-link" aria-label="Voir le dashboard">
-                                    <i class="fas fa-chart-bar"></i>
-                                </a>
-                                <a href="https://github.com/YanisZedira/energy-dashboard" target="_blank" class="project-link" aria-label="Voir sur GitHub">
-                                    <i class="fab fa-github"></i>
-                                </a>
-                            </div>
+                            <a href="https://github.com/YanisZedira/energy-dashboard" target="_blank" class="project-link-btn" aria-label="Voir sur GitHub">
+                                <i class="fab fa-github"></i>
+                                <span>Voir le code</span>
+                            </a>
                         </div>
-                        <div class="project-icon">
-                            <i class="fas fa-bolt"></i>
-                        </div>
+                        <span class="project-category-badge">Business Intelligence</span>
                     </div>
                     <div class="project-content">
-                        <span class="project-category">Business Intelligence</span>
                         <h3 class="project-title">Dashboard Consommation Énergétique</h3>
                         <p class="project-description">
-                            Dashboard interactif Power BI pour le suivi et l'analyse 
-                            de la consommation énergétique en temps réel.
+                            Dashboard interactif Power BI pour le suivi et l'analyse de la consommation énergétique.
                         </p>
                         <div class="project-tech">
-                            <span>Power BI</span>
+                            <span><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI"> Power BI</span>
                             <span>DAX</span>
-                            <span>SQL</span>
+                            <span><i class="devicon-postgresql-plain colored"></i> SQL</span>
                         </div>
                     </div>
-                </div>
+                </article>
             </div>
 
             <div class="projects-cta" data-aos="fade-up">
                 <a href="https://github.com/YanisZedira" target="_blank" class="btn btn-outline">
-                    <i class="fab fa-github"></i> Voir plus sur GitHub
+                    <i class="fab fa-github"></i> Voir tous mes projets sur GitHub
                 </a>
             </div>
         </div>
@@ -687,50 +761,69 @@
             <div class="education-grid">
                 <!-- ESILV -->
                 <div class="education-card" data-aos="fade-up" data-aos-delay="100">
-                    <div class="education-year">2026 - 2028</div>
+                    <div class="education-year">
+                        <span class="year-badge upcoming">À venir</span>
+                        Sept. 2026 - 2028
+                    </div>
                     <div class="education-content">
-                        <div class="education-badge">
-                            <i class="fas fa-graduation-cap"></i>
+                        <div class="education-header">
+                            <img src="https://upload.wikimedia.org/wikipedia/fr/2/2b/Logo_ESILV.svg" alt="ESILV" class="school-logo">
+                            <div>
+                                <h3>MSc Computer Science & Data Science</h3>
+                                <p class="education-school">ESILV - École Supérieure d'Ingénieurs Léonard de Vinci</p>
+                            </div>
                         </div>
-                        <h3>MSc Computer Science & Data Science</h3>
-                        <p class="education-school">ESILV - École Supérieure d'Ingénieurs Léonard de Vinci</p>
-                        <p class="education-type">En alternance</p>
+                        <span class="education-type">
+                            <i class="fas fa-briefcase"></i> En alternance
+                        </span>
                         <ul class="education-details">
                             <li>Spécialisation en Data Science et Intelligence Artificielle</li>
                             <li>Formation avancée en Big Data et Cloud Computing</li>
+                            <li>Projets industriels et recherche appliquée</li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- HETIC -->
                 <div class="education-card" data-aos="fade-up" data-aos-delay="200">
-                    <div class="education-year">2023 - 2026</div>
+                    <div class="education-year">
+                        <span class="year-badge current">En cours</span>
+                        2023 - 2026
+                    </div>
                     <div class="education-content">
-                        <div class="education-badge">
-                            <i class="fas fa-brain"></i>
+                        <div class="education-header">
+                            <img src="https://upload.wikimedia.org/wikipedia/fr/b/b6/Logo_Hetic.png" alt="HETIC" class="school-logo">
+                            <div>
+                                <h3>Bachelor Data & Intelligence Artificielle</h3>
+                                <p class="education-school">HETIC - Hautes Études des Technologies de l'Information</p>
+                            </div>
                         </div>
-                        <h3>Bachelor Data & Intelligence Artificielle</h3>
-                        <p class="education-school">HETIC - École des Hautes Technologies de l'Information et de la Communication</p>
-                        <p class="education-type">En alternance</p>
+                        <span class="education-type">
+                            <i class="fas fa-briefcase"></i> En alternance
+                        </span>
                         <ul class="education-details">
-                            <li>Formation complète en Data Science, Data Engineering et IA appliquée</li>
+                            <li>Data Science, Data Engineering et IA appliquée</li>
                             <li>Projets pratiques : Power BI, Python, DAX et SQL</li>
                             <li>Fondamentaux du cloud, ETL/ELT et APIs</li>
                             <li>Machine Learning : classification, régression, clustering</li>
-                            <li>Anglais professionnel (TOEIC) et gestion de projet data</li>
+                            <li>Anglais professionnel (TOEIC) et gestion de projet</li>
                         </ul>
                     </div>
                 </div>
 
                 <!-- IUT Orsay -->
                 <div class="education-card" data-aos="fade-up" data-aos-delay="300">
-                    <div class="education-year">2022 - 2023</div>
+                    <div class="education-year">
+                        2022 - 2023
+                    </div>
                     <div class="education-content">
-                        <div class="education-badge">
-                            <i class="fas fa-code"></i>
+                        <div class="education-header">
+                            <img src="https://upload.wikimedia.org/wikipedia/fr/9/9f/Logo_Universit%C3%A9_Paris-Saclay.svg" alt="Paris-Saclay" class="school-logo">
+                            <div>
+                                <h3>BUT Informatique</h3>
+                                <p class="education-school">IUT d'Orsay - Université Paris-Saclay</p>
+                            </div>
                         </div>
-                        <h3>BUT Informatique</h3>
-                        <p class="education-school">IUT d'Orsay - Université Paris-Saclay</p>
                         <ul class="education-details">
                             <li>Programmation en C++, algorithmes et structures de données</li>
                             <li>Systèmes d'exploitation, réseaux et modélisation UML</li>
@@ -752,37 +845,54 @@
                 <div class="contact-text" data-aos="fade-right" data-aos-delay="100">
                     <h3>Travaillons ensemble !</h3>
                     <p>
-                        Je suis actuellement à la recherche d'une alternance pour septembre 2026 
-                        dans le domaine de la Data Engineering et de la transition énergétique.
+                        Je suis à la recherche d'une <strong>alternance pour septembre 2026</strong> 
+                        dans le domaine de la Data Engineering et de l'Analytics.
                     </p>
                     <p>
-                        N'hésitez pas à me contacter pour discuter de vos projets data 
-                        ou d'opportunités de collaboration.
+                        Que vous ayez un projet data, une opportunité d'alternance ou simplement envie 
+                        d'échanger, n'hésitez pas à me contacter. Je serai ravi de discuter avec vous !
                     </p>
                     <div class="contact-info">
                         <a href="mailto:myanis.zedira@gmail.com" class="contact-item">
-                            <i class="fas fa-envelope"></i>
-                            <span>myanis.zedira@gmail.com</span>
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">Email</span>
+                                <span class="contact-value">myanis.zedira@gmail.com</span>
+                            </div>
                         </a>
                         <a href="https://www.linkedin.com/in/yaniszedira/" target="_blank" class="contact-item">
-                            <i class="fab fa-linkedin-in"></i>
-                            <span>linkedin.com/in/yaniszedira</span>
+                            <div class="contact-icon linkedin">
+                                <i class="fab fa-linkedin-in"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">LinkedIn</span>
+                                <span class="contact-value">linkedin.com/in/yaniszedira</span>
+                            </div>
                         </a>
                         <a href="https://github.com/YanisZedira" target="_blank" class="contact-item">
-                            <i class="fab fa-github"></i>
-                            <span>github.com/YanisZedira</span>
+                            <div class="contact-icon github">
+                                <i class="fab fa-github"></i>
+                            </div>
+                            <div class="contact-details">
+                                <span class="contact-label">GitHub</span>
+                                <span class="contact-value">github.com/YanisZedira</span>
+                            </div>
                         </a>
                     </div>
                 </div>
                 <div class="contact-form-container" data-aos="fade-left" data-aos-delay="200">
-                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/https://formspree.io/f/maqdjona" method="POST">
-                        <div class="form-group">
-                            <label for="name">Nom</label>
-                            <input type="text" id="name" name="name" required placeholder="Votre nom">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                    <form class="contact-form" id="contact-form" action="https://formspree.io/f/maqdjona" method="POST">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Nom complet</label>
+                                <input type="text" id="name" name="name" required placeholder="Votre nom">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="email" required placeholder="votre@email.com">
+                            </div>
                         </div>
                         <div class="form-group">
                             <label for="subject">Sujet</label>
@@ -793,7 +903,7 @@
                             <textarea id="message" name="message" rows="5" required placeholder="Votre message..."></textarea>
                         </div>
                         <button type="submit" class="btn btn-primary btn-submit">
-                            <i class="fas fa-paper-plane"></i> Envoyer
+                            <i class="fas fa-paper-plane"></i> Envoyer le message
                         </button>
                     </form>
                 </div>
@@ -820,7 +930,7 @@
                     </a>
                 </div>
                 <p class="footer-text">
-                    Conçu & développé avec <span class="heart">❤</span> par Yanis Zedira
+                    Conçu et développé avec <span class="heart">❤</span> par Yanis Zedira
                 </p>
                 <p class="footer-copyright">
                     © 2024 Yanis Zedira. Tous droits réservés.
