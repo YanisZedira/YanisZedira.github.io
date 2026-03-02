@@ -51,6 +51,38 @@
     --radius-xl: 30px;
 }
 
+
+/* Project Links (Live Demo + GitHub) */
+.project-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-color);
+}
+
+.project-link-external {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-sm);
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    transition: var(--transition-fast);
+}
+
+.project-link-external:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.project-link-external i {
+    font-size: 0.85rem;
+}
+
 /* ==================== */
 /* RESET & BASE */
 /* ==================== */
